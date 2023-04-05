@@ -95,7 +95,15 @@ pipeline{
             dockerimagePush("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
-        }   
+        }
+        stage('Docker image CleanUp'){
+           when { expression {  params.action == 'create' } }
+           steps{
+            script{
+                dockerimageClean()
+            }
+           } 
+        }  
       }
     }
                 
