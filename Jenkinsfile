@@ -1,4 +1,4 @@
-@Library('my-shared-library') _
+@Library('my shared library') _
 pipeline{
 
     agent any
@@ -9,7 +9,7 @@ pipeline{
                 script{
                     gitCheckout(
                         branch: "main"
-                        url: https://github.com/Phaneendra-Manthena/Java-Project.git
+                        url: "https://github.com/Phaneendra-Manthena/Java-Project.git"
                     )
         
                         }
