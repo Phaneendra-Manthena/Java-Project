@@ -37,11 +37,6 @@ pipeline{
                         script{
                             checkStyle()
                         }
-                        post {
-                            success{
-                                echo 'Generated Analysis Result'
-                            }
-                        }
                     }
                 }
             }
