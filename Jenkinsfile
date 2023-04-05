@@ -25,6 +25,25 @@ pipeline{
                         }
                     }
                 }
+                stage('Integration Test'){
+                    steps{
+                        script{
+                            integrationTest()
+                        }
+                    }
+                }
+                stage('Code Analysis With CheckStyle'){
+                    steps{
+                        script{
+                            checkStyle()
+                        }
+                        post {
+                            success{
+                                echo 'Generated Analysis Result'
+                            }
+                        }
+                    }
+                }
             }
         }
     
